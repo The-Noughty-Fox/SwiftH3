@@ -127,9 +127,7 @@ extension H3Index {
         children.withUnsafeMutableBufferPointer { ptr in
             h3ToChildren(value, Int32(resolution), ptr.baseAddress)
         }
-        return children
-            .filter { $0 != 0 }
-            .map { H3Index($0) }
+        return children.compactMap { $0 != 0 ? H3Index($0) : nil }
     }
 
     /// The index for the child directly below the current index

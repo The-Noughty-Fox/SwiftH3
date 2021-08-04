@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "Ch3",
-        "repositoryURL": "https://github.com/bdotdub/Ch3.git",
+        "repositoryURL": "https://github.com/gbrhaz/Ch3.git",
         "state": {
           "branch": null,
           "revision": "c9bb49bc6801e745f0c7ac135855cda09dbb4536",
