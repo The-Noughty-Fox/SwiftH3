@@ -118,7 +118,7 @@ final class H3IndexTests: XCTestCase {
         let boundary = index.geoBoundary
 
         XCTAssertEqual(boundary.numberOfVertices, 6)
-        XCTAssertEqual(boundary.coordinates.first, .init(lat: 0.7096831323345316, lon: -1.2905579615739888))
+        XCTAssertEqual(boundary.coordinates.first, .init(lat: 0.012386307305104208, lon: -0.022524485617292568))
     }
 
     static var allTests = [
