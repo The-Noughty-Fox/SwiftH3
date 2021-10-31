@@ -113,6 +113,14 @@ final class H3IndexTests: XCTestCase {
         XCTAssertEqual(res15Index!.directCenterChild, nil)
     }
 
+    func testGeoBoundary() {
+        let index = H3Index(0x8a2a10766d87fff)
+        let boundary = index.geoBoundary
+
+        XCTAssertEqual(boundary.numberOfVertices, 6)
+        XCTAssertEqual(boundary.coordinates.first, .init(lat: 0.7096831323345316, lon: -1.2905579615739888))
+    }
+
     static var allTests = [
         ("testStringToH3Index", testStringToH3Index),
         ("testCoordToH3Index", testCoordToH3Index),

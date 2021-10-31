@@ -42,6 +42,30 @@ public struct H3Index {
         self.value = value
     }
 
+    public var geoBoundary: H3GeoBoundary {
+        var boundary = GeoBoundary()
+        var coordinates = [H3Coordinate]()
+        h3ToGeoBoundary(value, &boundary)
+
+        coordinates.append(.init(lat: boundary.verts.0.lat, lon: boundary.verts.0.lon))
+        coordinates.append(.init(lat: boundary.verts.1.lat, lon: boundary.verts.1.lon))
+        coordinates.append(.init(lat: boundary.verts.2.lat, lon: boundary.verts.2.lon))
+        coordinates.append(.init(lat: boundary.verts.3.lat, lon: boundary.verts.3.lon))
+        coordinates.append(.init(lat: boundary.verts.4.lat, lon: boundary.verts.4.lon))
+        coordinates.append(.init(lat: boundary.verts.5.lat, lon: boundary.verts.5.lon))
+        coordinates.append(.init(lat: boundary.verts.6.lat, lon: boundary.verts.6.lon))
+        coordinates.append(.init(lat: boundary.verts.7.lat, lon: boundary.verts.7.lon))
+        coordinates.append(.init(lat: boundary.verts.8.lat, lon: boundary.verts.8.lon))
+        coordinates.append(.init(lat: boundary.verts.9.lat, lon: boundary.verts.9.lon))
+
+        coordinates = coordinates.dropLast(coordinates.count - Int(boundary.numVerts))
+
+        return H3GeoBoundary(
+            numberOfVertices: Int(boundary.numVerts),
+            coordinates: coordinates
+        )
+    }
+
 }
 
 // MARK: Properties

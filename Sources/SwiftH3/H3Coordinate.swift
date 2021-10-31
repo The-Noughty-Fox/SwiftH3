@@ -1,7 +1,7 @@
 import Ch3
 
 /// Represents a coordinate based on latitude and longitude
-public struct H3Coordinate {
+public struct H3Coordinate: Equatable {
 
     /// The latitude
     public let lat: Double
