@@ -9,6 +9,6 @@ import Foundation
 
 
 public struct H3GeoBoundary {
-    let numberOfVertices: Int
-    let coordinates: [H3Coordinate]
+    public let numberOfVertices: Int
+    public let coordinates: [H3Coordinate]
 }
